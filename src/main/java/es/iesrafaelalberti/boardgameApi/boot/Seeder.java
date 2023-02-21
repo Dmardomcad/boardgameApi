@@ -1,7 +1,9 @@
 package es.iesrafaelalberti.boardgameApi.boot;
 
 import es.iesrafaelalberti.boardgameApi.models.Boardgame;
+import es.iesrafaelalberti.boardgameApi.models.Publisher;
 import es.iesrafaelalberti.boardgameApi.repository.BoardgameRepository;
+import es.iesrafaelalberti.boardgameApi.repository.PublisherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -10,7 +12,8 @@ import org.springframework.stereotype.Component;
 public class Seeder implements CommandLineRunner {
     @Autowired
     BoardgameRepository boardGameRepository;
-
+    @Autowired
+    PublisherRepository publisherRepository;
     @Override
     public void run (String... args) {
 
