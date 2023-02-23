@@ -8,11 +8,11 @@
 		<version>3.0.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.universeidadmisco</groupId>
+	<groupId>es.iesrafaelalberti</groupId>
 	<artifactId>boardgameApi</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>pruebaApi</name>
-	<description>pruebaApi</description>
+	<name>boardgameApi</name>
+	<description>boardgameApi</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>

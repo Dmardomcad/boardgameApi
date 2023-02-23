@@ -14,7 +14,7 @@ public class Publisher {
     @GeneratedValue
     private Long id;
     private String name;
-    private String yearsActive;
+    private Integer yearsActive;
     @JsonBackReference
     @OneToMany (mappedBy = "publisher", cascade = CascadeType.ALL)
     private Set<Boardgame> boardgame = new HashSet<>();
@@ -23,9 +23,8 @@ public class Publisher {
     public Publisher() {
     }
 
-    public Publisher(String name, String yearsActive, Set<Boardgame> boardgame) {
+    public Publisher(String name, Integer yearsActive) {
         this.name = name;
         this.yearsActive = yearsActive;
-        this.boardgame = boardgame;
     }
 }
