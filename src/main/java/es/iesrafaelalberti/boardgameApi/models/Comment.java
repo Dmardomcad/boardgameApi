@@ -16,5 +16,12 @@ public class Comment {
     @JoinColumn()
     private Boardgame boardgame;
 
+    public Comment(){
 
+    }
+
+    public Comment(String content, Boardgame boardgame) {
+        this.content = content;
+        this.boardgame = boardgame;
+    }
 }

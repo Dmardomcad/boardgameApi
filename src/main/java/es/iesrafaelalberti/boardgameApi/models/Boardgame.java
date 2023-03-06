@@ -1,5 +1,6 @@
 package es.iesrafaelalberti.boardgameApi.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -23,6 +24,10 @@ public class Boardgame {
     @ManyToOne
     @JoinColumn()
     private Publisher publisher;
+    @JsonBackReference
+    @ManyToOne
+    @JoinColumn()
+    private Comment comment;
     public Boardgame() {
     }
 

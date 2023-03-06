@@ -1,6 +1,5 @@
 package es.iesrafaelalberti.boardgameApi.controllers;
 
-import es.iesrafaelalberti.boardgameApi.models.Boardgame;
 import es.iesrafaelalberti.boardgameApi.models.Comment;
 import es.iesrafaelalberti.boardgameApi.repository.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;

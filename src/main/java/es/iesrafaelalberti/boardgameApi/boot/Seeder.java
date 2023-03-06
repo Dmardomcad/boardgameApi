@@ -1,9 +1,11 @@
 package es.iesrafaelalberti.boardgameApi.boot;
 
 import es.iesrafaelalberti.boardgameApi.factories.BoardgameFactory;
+import es.iesrafaelalberti.boardgameApi.factories.CommentFactory;
 import es.iesrafaelalberti.boardgameApi.factories.PublisherFactory;
 import es.iesrafaelalberti.boardgameApi.models.Publisher;
 import es.iesrafaelalberti.boardgameApi.repository.BoardgameRepository;
+import es.iesrafaelalberti.boardgameApi.repository.CommentRepository;
 import es.iesrafaelalberti.boardgameApi.repository.PublisherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -21,6 +23,12 @@ public class Seeder implements CommandLineRunner {
     PublisherFactory publisherFactory;
     @Autowired
     BoardgameFactory boardgameFactory;
+    @Autowired
+    CommentFactory commentFactory;
+    @Autowired
+    CommentRepository commentRepository;
+
+    // Falta introducir los datos para los comments
     @Override
     public void run (String... args) {
 
