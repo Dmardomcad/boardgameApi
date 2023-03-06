@@ -19,7 +19,7 @@ public class Boardgame {
 
     private String difficulty;
 
-    @JsonIgnoreProperties("id") //Con JsonIgnoreProperties el atributo que se le indique no aparecerá en la consulta http
+    @JsonIgnoreProperties("id")
     @ManyToOne
     @JoinColumn()
     private Publisher publisher;

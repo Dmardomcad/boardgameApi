@@ -1,8 +1,6 @@
 package es.iesrafaelalberti.boardgameApi.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,5 +11,10 @@ public class Comment {
     private Long id;
 
     private String content;
+
+    @ManyToOne
+    @JoinColumn()
+    private Boardgame boardgame;
+
 
 }
