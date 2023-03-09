@@ -4,9 +4,11 @@ import es.iesrafaelalberti.boardgameApi.factories.BoardgameFactory;
 import es.iesrafaelalberti.boardgameApi.factories.CommentFactory;
 import es.iesrafaelalberti.boardgameApi.factories.PublisherFactory;
 import es.iesrafaelalberti.boardgameApi.models.Publisher;
+import es.iesrafaelalberti.boardgameApi.models.User;
 import es.iesrafaelalberti.boardgameApi.repository.BoardgameRepository;
 import es.iesrafaelalberti.boardgameApi.repository.CommentRepository;
 import es.iesrafaelalberti.boardgameApi.repository.PublisherRepository;
+import es.iesrafaelalberti.boardgameApi.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -27,11 +29,14 @@ public class Seeder implements CommandLineRunner {
     CommentFactory commentFactory;
     @Autowired
     CommentRepository commentRepository;
+    @Autowired
+    UserRepository userRepository;
 
     // Falta introducir los datos para los comments
     @Override
     public void run (String... args) {
-
+        User testUser = new User("dmardom", "pestillo");
+        userRepository.save(testUser);
         List<Publisher> publishers = publisherFactory.getOldSchool(10);
         publisherRepository.saveAll(publishers);
         boardGameRepository.saveAll(boardgameFactory.getOldSchool(10, publishers));
