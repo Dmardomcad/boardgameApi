@@ -7,6 +7,9 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity @Getter @Setter
 public class Boardgame {
     @Id
@@ -25,6 +28,10 @@ public class Boardgame {
     @ManyToOne
     @JoinColumn()
     private Publisher publisher;
+
+    @JsonManagedReference(value = "valor2")
+    @OneToMany(mappedBy = "boardgame", cascade = CascadeType.ALL)
+    private Set<Comment> comment = new HashSet<>();
 
     public Boardgame() {
     }

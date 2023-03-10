@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Set;
+
 @Entity @Getter @Setter
 public class Comment {
     @Id
@@ -17,12 +19,20 @@ public class Comment {
     @ManyToOne
     @JoinColumn()
     private User user;
+
+    @JsonBackReference(value="valor2")
+    @ManyToOne
+    @JoinColumn()
+    private Boardgame boardgame;
+
     public Comment(){
 
     }
 
-    public Comment(String content, User user) {
+    public Comment(String content, User user, Boardgame boardgame) {
         this.content = content;
         this.user = user;
+        this.boardgame = boardgame;
+
     }
 }

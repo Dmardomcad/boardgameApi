@@ -1,6 +1,7 @@
 package es.iesrafaelalberti.boardgameApi;
 
 import es.iesrafaelalberti.boardgameApi.repository.BoardgameRepository;
+import es.iesrafaelalberti.boardgameApi.repository.CommentRepository;
 import es.iesrafaelalberti.boardgameApi.repository.PublisherRepository;
 import es.iesrafaelalberti.boardgameApi.repository.UserRepository;
 import org.junit.jupiter.api.Test;
@@ -26,6 +27,8 @@ class BoardgameApiApplicationTests {
 	PublisherRepository publisherRepository;
 	@Autowired
 	UserRepository userRepository;
+	@Autowired
+	CommentRepository commentRepository;
 	@Test
 	void rootWhenUnauthenticatedThen401() throws Exception {
 		this.mvc.perform(get("/boardgames/"))
@@ -33,8 +36,9 @@ class BoardgameApiApplicationTests {
 	}
 	@Test
 	void contextLoads() {
-		assert boardgameRepository.count() == 10;
+		assert boardgameRepository.count() == 20;
 		assert publisherRepository.count() == 10;
+		assert commentRepository.count() == 10;
 	}
 	@Test
 	void listTest() throws Exception {

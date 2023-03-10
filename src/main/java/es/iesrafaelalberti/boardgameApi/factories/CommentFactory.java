@@ -17,11 +17,12 @@ public class CommentFactory {
 
     Random rand = new Random();
 
-    public List<Comment> getOldSchool(int number, List<User> users) {
+    public List<Comment> getOldSchool(int number, List<User> users, List<Boardgame> boardgames) {
         List<Comment> comments = new ArrayList<>();
         for(int i = 0; i < number; i++)
             comments.add(new Comment(esFaker.lorem().paragraph(),
-                    users.get(rand.nextInt(users.size()))));
+                    users.get(rand.nextInt(users.size())),
+                    boardgames.get(rand.nextInt(boardgames.size()))));
         return comments;
     }
 
