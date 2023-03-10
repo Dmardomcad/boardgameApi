@@ -1,7 +1,7 @@
 package es.iesrafaelalberti.boardgameApi.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,7 +20,7 @@ public class Boardgame {
 
     private String difficulty;
 
-    @JsonIgnoreProperties("id")
+    @JsonManagedReference
     @ManyToOne
     @JoinColumn()
     private Publisher publisher;
