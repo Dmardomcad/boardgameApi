@@ -4,6 +4,7 @@ import es.iesrafaelalberti.boardgameApi.factories.BoardgameFactory;
 import es.iesrafaelalberti.boardgameApi.factories.CommentFactory;
 import es.iesrafaelalberti.boardgameApi.factories.PublisherFactory;
 import es.iesrafaelalberti.boardgameApi.factories.UserFactory;
+import es.iesrafaelalberti.boardgameApi.models.Comment;
 import es.iesrafaelalberti.boardgameApi.models.Publisher;
 import es.iesrafaelalberti.boardgameApi.models.User;
 import es.iesrafaelalberti.boardgameApi.repository.BoardgameRepository;
@@ -46,6 +47,9 @@ public class Seeder implements CommandLineRunner {
 
         List<Publisher> publishers = publisherFactory.getOldSchool(10);
         publisherRepository.saveAll(publishers);
+
+        commentRepository.saveAll(commentFactory.getOldSchool(10, users));
+
 
         boardGameRepository.saveAll(boardgameFactory.getOldSchool(10, publishers));
         /*Publisher gw = (new Publisher(name: "gw"))

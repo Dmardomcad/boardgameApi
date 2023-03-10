@@ -3,6 +3,7 @@ package es.iesrafaelalberti.boardgameApi.factories;
 import com.github.javafaker.Faker;
 import es.iesrafaelalberti.boardgameApi.models.Boardgame;
 import es.iesrafaelalberti.boardgameApi.models.Comment;
+import es.iesrafaelalberti.boardgameApi.models.User;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -16,11 +17,11 @@ public class CommentFactory {
 
     Random rand = new Random();
 
-    public List<Comment> getOldSchool(int number, List<Boardgame> boardgames) {
+    public List<Comment> getOldSchool(int number, List<User> users) {
         List<Comment> comments = new ArrayList<>();
         for(int i = 0; i < number; i++)
             comments.add(new Comment(esFaker.lorem().paragraph(),
-                    boardgames.get(rand.nextInt(boardgames.size()))));
+                    users.get(rand.nextInt(users.size()))));
         return comments;
     }
 

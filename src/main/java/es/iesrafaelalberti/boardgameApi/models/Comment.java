@@ -1,5 +1,6 @@
 package es.iesrafaelalberti.boardgameApi.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,16 +13,16 @@ public class Comment {
 
     private String content;
 
+    @JsonBackReference(value="valor")
     @ManyToOne
     @JoinColumn()
-    private Boardgame boardgame;
-
+    private User user;
     public Comment(){
 
     }
 
-    public Comment(String content, Boardgame boardgame) {
+    public Comment(String content, User user) {
         this.content = content;
-        this.boardgame = boardgame;
+        this.user = user;
     }
 }

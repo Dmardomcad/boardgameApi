@@ -25,10 +25,7 @@ public class Boardgame {
     @ManyToOne
     @JoinColumn()
     private Publisher publisher;
-    @JsonBackReference
-    @ManyToOne
-    @JoinColumn()
-    private Comment comment;
+
     public Boardgame() {
     }
 
