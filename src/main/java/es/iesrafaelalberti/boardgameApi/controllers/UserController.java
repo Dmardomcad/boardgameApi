@@ -15,7 +15,7 @@ public class UserController {
     @Autowired
     UserRepository userRepository;
 
-    @GetMapping("/users/")
+    @GetMapping("/users")
     public ResponseEntity<Object> index(){
         return new ResponseEntity<>(userRepository.findAll(), HttpStatus.OK);
     }

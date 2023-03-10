@@ -50,7 +50,7 @@ class BoardgameApiApplicationTests {
 
 
 
-		mvc.perform(get("/boardgames/")
+		mvc.perform(get("/boardgames")
 						.header("Authorization","Bearer " + token)
 						.contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk())
@@ -113,7 +113,7 @@ class BoardgameApiApplicationTests {
 		String testBoardgame = "{\"name\": \"Bang!\", \"description\": \"Juego rápido y sencillo para toda la familia\", \"duration\": 25, \"difficulty\": \"Easy\" }";
 		// modify attributes
 		// Method put on url /boardgames/1/
-		mvc.perform(put("/boardgames/1/")
+		mvc.perform(put("/boardgames/1")
 						.header("Authorization","Bearer " + token)
 				.contentType(MediaType.APPLICATION_JSON)
 				.content(testBoardgame))
@@ -135,7 +135,7 @@ class BoardgameApiApplicationTests {
 		 String token = result.getResponse().getContentAsString();
 
 		long boardgameCount = boardgameRepository.count();
-		mvc.perform(delete("/boardgames/1/")
+		mvc.perform(delete("/boardgames/1")
 						.header("Authorization","Bearer " + token)
 						.contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk())

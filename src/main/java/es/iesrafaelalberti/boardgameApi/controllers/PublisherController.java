@@ -14,7 +14,7 @@ public class PublisherController {
     @Autowired
     PublisherRepository publisherRepository;
 
-    @GetMapping("/publishers/")
+    @GetMapping("/publishers")
     public ResponseEntity<Object> index(){ return new ResponseEntity<>(publisherRepository.findAll(), HttpStatus.OK);
     }
 

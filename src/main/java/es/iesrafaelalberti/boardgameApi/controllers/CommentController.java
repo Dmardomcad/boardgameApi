@@ -21,7 +21,7 @@ public class CommentController {
     public ResponseEntity<Object> show(@PathVariable("id")Long id){
         return new ResponseEntity<>(commentRepository.findById(id), HttpStatus.OK);
     }
-    @PostMapping("/comments/")
+    @PostMapping("/comments/create")
     public ResponseEntity<Object> create(@RequestBody Comment comment){
         commentRepository.save(comment);
         return new ResponseEntity<>(comment, HttpStatus.OK);

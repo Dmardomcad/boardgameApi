@@ -14,7 +14,7 @@ public class BoardgameController {
     @Autowired
     BoardgameRepository boardGameRepository;
 
-    @GetMapping("/boardgames/")
+    @GetMapping("/boardgames")
     public ResponseEntity<Object> index() {return new ResponseEntity<>(boardGameRepository.findAll(), HttpStatus.OK);}
 
     @GetMapping("/boardgames/{id}")
@@ -26,14 +26,14 @@ public class BoardgameController {
         boardGameRepository.save(boardgame);
         return new ResponseEntity<>(boardgame, HttpStatus.OK);
     }
-    @DeleteMapping("/boardgames/{id}/")
+    @DeleteMapping("/boardgames/{id}")
     public ResponseEntity<Object> delete(@PathVariable("id") Long id) {
         Optional<Boardgame> boardGame = boardGameRepository.findById(id);
         boardGame.ifPresent(value -> boardGameRepository.delete(value));
         return new ResponseEntity<>(boardGame.isPresent(), HttpStatus.OK);
     }
 
-    @PutMapping("/boardgames/{id}/")
+    @PutMapping("/boardgames/{id}")
     public ResponseEntity<Object> update(@PathVariable("id") Long id, @RequestBody Boardgame boardgame) {
         Optional<Boardgame> oldBoardgame = boardGameRepository.findById(id);
         if(oldBoardgame.isPresent()) {
