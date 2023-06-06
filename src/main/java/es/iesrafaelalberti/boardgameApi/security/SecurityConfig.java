@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -53,7 +54,13 @@ import static org.springframework.security.config.Customizer.withDefaults;
         @Bean
         public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
             return http
+                    .cors().configurationSource(corsConfigurationSource()).and()
                     .csrf(AbstractHttpConfigurer::disable)
+                    // authorization of preflight requests (OPTIONS)
+                    .authorizeHttpRequests(auth -> auth.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll())
+                    // you can authorize/authenticate requests based on roles by matcher (regular expression)
+                    //.authorizeHttpRequests(auth -> auth.requestMatchers("/prisoners/**").hasAuthority("SCOPE_ADMIN"))
+                    .authorizeHttpRequests(auth -> auth.requestMatchers(HttpMethod.GET, "/**").permitAll())
                     .authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
                     .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                     .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
