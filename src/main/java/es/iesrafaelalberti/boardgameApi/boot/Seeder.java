@@ -40,7 +40,7 @@ public class Seeder implements CommandLineRunner {
     // Falta introducir los datos para los comments
     @Override
     public void run (String... args) {
-        User testUser = new User("dmardom", "pestillo");
+        User testUser = new User("dmardom", "dmardom@alberti.es", "pestillo");
         userRepository.save(testUser);
 
         List<User> users = userFactory.getOldSchool(10);

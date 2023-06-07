@@ -16,6 +16,7 @@ public class UserFactory {
         List<User> users = new ArrayList<>();
         for(int i=0;i<number; i++)
             users.add(new User(esFaker.name().username(),
+                    esFaker.internet().emailAddress(),
                     esFaker.internet().password()));
         return users;
     }
