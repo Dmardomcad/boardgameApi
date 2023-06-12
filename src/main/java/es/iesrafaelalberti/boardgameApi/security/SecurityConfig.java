@@ -61,6 +61,7 @@ import static org.springframework.security.config.Customizer.withDefaults;
                     // you can authorize/authenticate requests based on roles by matcher (regular expression)
                     //.authorizeHttpRequests(auth -> auth.requestMatchers("/prisoners/**").hasAuthority("SCOPE_ADMIN"))
                     .authorizeHttpRequests(auth -> auth.requestMatchers(HttpMethod.GET, "/**").permitAll())
+                    .authorizeHttpRequests(auth -> auth.requestMatchers(HttpMethod.POST, "/users/create").permitAll())
                     .authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
                     .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                     .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
@@ -101,9 +102,9 @@ import static org.springframework.security.config.Customizer.withDefaults;
         @Bean
         CorsConfigurationSource corsConfigurationSource() {
             CorsConfiguration configuration = new CorsConfiguration();
-            configuration.setAllowedOrigins(List.of("*"));
+            configuration.setAllowedOrigins(List.of("http://localhost:5173"));
             configuration.setAllowedHeaders(List.of("*"));
-            configuration.setAllowedMethods(List.of("GET"));
+            configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE"));
             UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
             source.registerCorsConfiguration("/**", configuration);
             return source;

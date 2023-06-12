@@ -5,11 +5,13 @@ import es.iesrafaelalberti.boardgameApi.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:5173")
 public class UserController {
 
     @Autowired
@@ -26,6 +28,8 @@ public class UserController {
     }
     @PostMapping("/users/create")
     public ResponseEntity<Object> create(@RequestBody User user){
+        String encodedPassword = new BCryptPasswordEncoder().encode(user.getPassword());
+        user.setPassword(encodedPassword);
         userRepository.save(user);
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
