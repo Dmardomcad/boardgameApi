@@ -22,6 +22,7 @@ public class BoardgameFactory {
         for (int i = 0; i < number; i++)
             boardgames.add(new Boardgame(esFaker.name().firstName(),
                     esFaker.name().firstName(),
+                    esFaker.name().firstName(),
                     esFaker.number().numberBetween(10,160),
                     esFaker.name().firstName(),
                     publishers.get(rand.nextInt(publishers.size()))));
