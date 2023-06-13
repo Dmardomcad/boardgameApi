@@ -52,16 +52,16 @@ public class Seeder implements CommandLineRunner {
         // Manually games creation
         List<Boardgame> boardgames = new ArrayList<>();
 
-        Boardgame warhammer40k = new Boardgame("Warhammer 40.000", "Juego de miniaturas coleccionables, simulando batallas de un fúturo oscuro.", "aquivaunaurl", 240, "Hard", gamesworkshop);
+        Boardgame warhammer40k = new Boardgame("Warhammer 40.000", "Juego de miniaturas coleccionables, simulando batallas de un fúturo oscuro.", "https://i.ibb.co/vZq3HZX/60010199031-WH40-KElite-Edition-Stock.webp", 240, "Hard", gamesworkshop);
         boardgames.add(warhammer40k);
 
-        Boardgame uno = new Boardgame("Uno", "Juego de cartas sencillo para toda la familia.", "aquivaunaurl", 15, "Easy", gamesworkshop);
+        Boardgame uno = new Boardgame("Uno", "Juego de cartas sencillo para toda la familia.", "https://i.ibb.co/9GFnVBC/Uno.jpg", 15, "Easy", gamesworkshop);
         boardgames.add(uno);
 
-        Boardgame junglespeed = new Boardgame("Jungle Speed", "Juego de reflejos y velocidad.", "aquivaunaurl", 15, "Easy", gamesworkshop);
+        Boardgame junglespeed = new Boardgame("Jungle Speed", "Juego de reflejos y velocidad.", "https://i.ibb.co/Wg74HjM/jungle.png", 15, "Easy", gamesworkshop);
         boardgames.add(junglespeed);
 
-        Boardgame hombreslobo = new Boardgame("Hombres Lobo", "Juego de cartas y engaño.", "aquivaunaurl", 15, "Easy", gamesworkshop);
+        Boardgame hombreslobo = new Boardgame("Hombres Lobo", "Juego de cartas y engaño.", "https://i.ibb.co/DbS5vFm/hombres-lobo.jpg", 15, "Easy", gamesworkshop);
         boardgames.add(hombreslobo);
 
         boardGameRepository.saveAll(boardgames);
