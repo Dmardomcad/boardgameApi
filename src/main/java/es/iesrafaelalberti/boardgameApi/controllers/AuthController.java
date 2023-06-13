@@ -3,11 +3,13 @@ package es.iesrafaelalberti.boardgameApi.controllers;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.Authentication;
 import es.iesrafaelalberti.boardgameApi.services.TokenService;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.slf4j.Logger;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:5173")
 public class AuthController {
 
     private static final Logger LOG = LoggerFactory.getLogger(AuthController.class);
