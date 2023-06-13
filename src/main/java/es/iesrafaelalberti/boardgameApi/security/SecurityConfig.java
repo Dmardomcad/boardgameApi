@@ -68,7 +68,6 @@ import static org.springframework.security.config.Customizer.withDefaults;
                     //.authorizeHttpRequests(auth -> auth.requestMatchers("/prisoners/**").hasAuthority("SCOPE_ADMIN"))
                     .authorizeHttpRequests(auth -> auth.requestMatchers(HttpMethod.GET, "/**").permitAll())
                     .authorizeHttpRequests(auth -> auth.requestMatchers(HttpMethod.POST, "/users/create").permitAll())
-                    .authorizeHttpRequests(auth -> auth.requestMatchers(HttpMethod.POST, "/token").permitAll())
                     .authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
                     .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                     .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
