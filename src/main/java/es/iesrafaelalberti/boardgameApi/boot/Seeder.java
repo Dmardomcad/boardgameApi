@@ -73,13 +73,10 @@ public class Seeder implements CommandLineRunner {
 
        /* List<Publisher> publishers = publisherFactory.getOldSchool(10);
         publisherRepository.saveAll(publishers);
-
-
         List<Boardgame> boardgames = boardgameFactory.getOldSchool(10, publishers);
         boardGameRepository.saveAll(boardgames); */
 
         commentRepository.saveAll(commentFactory.getOldSchool(10,users, boardgames));
-
 
         //boardGameRepository.saveAll(boardgameFactory.getOldSchool(10, publishers));
         /*Publisher gw = (new Publisher(name: "gw"))
