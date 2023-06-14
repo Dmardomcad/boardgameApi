@@ -8,6 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -22,9 +24,9 @@ public class UserController {
         return new ResponseEntity<>(userRepository.findAll(), HttpStatus.OK);
     }
 
-    @GetMapping("/users/{id}")
-    public ResponseEntity<Object> show(@PathVariable("id") Long id) {
-        return new ResponseEntity<>(userRepository.findById(id), HttpStatus.OK);
+    @GetMapping("/users/{username}")
+    public ResponseEntity<Object> show(@PathVariable("username") String username) {
+        return new ResponseEntity<>(userRepository.findByUsername(username), HttpStatus.OK);
     }
     @PostMapping("/users/create")
     public ResponseEntity<Object> create(@RequestBody User user){
@@ -50,4 +52,14 @@ public class UserController {
         return new ResponseEntity<>(false, HttpStatus.NOT_FOUND);
     }
 
+    @GetMapping("users/exists/{username}")
+    public ResponseEntity<Map<String, Boolean>> checkExists(@PathVariable("username") String username) {
+        boolean exists = userRepository.existsByUsername(username);
+
+        // Crear una respuesta con la bandera "exists"
+        Map<String, Boolean> response = new HashMap<>();
+        response.put("exists", exists);
+
+        return ResponseEntity.ok(response);
+    }
 }
