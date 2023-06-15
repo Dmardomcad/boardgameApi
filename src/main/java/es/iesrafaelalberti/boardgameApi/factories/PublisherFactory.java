@@ -19,7 +19,8 @@ public class PublisherFactory {
         List<Publisher> publishers = new ArrayList<>();
         for(int i=0;i<number; i++)
             publishers.add(new Publisher(esFaker.name().firstName(),
-                                        esFaker.number().randomDigit()
+                                        esFaker.number().randomDigit(),
+                                        esFaker.name().firstName()
                     ));
 
     return publishers;

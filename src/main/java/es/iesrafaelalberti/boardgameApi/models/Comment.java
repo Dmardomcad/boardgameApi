@@ -13,6 +13,7 @@ public class Comment {
     @GeneratedValue
     private Long id;
 
+    @Column(length = 1500)
     private String content;
 
     @JsonBackReference(value="valor")
