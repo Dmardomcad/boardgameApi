@@ -1,5 +1,6 @@
 package es.iesrafaelalberti.boardgameApi.controllers;
 
+import es.iesrafaelalberti.boardgameApi.dto.CommentDTO;
 import es.iesrafaelalberti.boardgameApi.models.Comment;
 import es.iesrafaelalberti.boardgameApi.repository.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +19,23 @@ public class CommentController {
     public ResponseEntity<Object> index() {return new ResponseEntity<>(commentRepository.findAll(), HttpStatus.OK);}
 
     @GetMapping("/comments/{id}")
+    public ResponseEntity<Object> show(@PathVariable("id") Long id) {
+        Optional<Comment> commentOptional = commentRepository.findById(id);
+
+        if (commentOptional.isPresent()) {
+            Comment comment = commentOptional.get();
+            CommentDTO commentDTO = new CommentDTO(comment.getId(), comment.getBoardgame().getId(), comment.getContent(), comment.getUser().getUsername());
+
+            return new ResponseEntity<>(commentDTO, HttpStatus.OK);
+        }
+
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+    // Old way before DTO
+    /*
     public ResponseEntity<Object> show(@PathVariable("id")Long id){
         return new ResponseEntity<>(commentRepository.findById(id), HttpStatus.OK);
-    }
+    } */
     @PostMapping("/comments/create")
     public ResponseEntity<Object> create(@RequestBody Comment comment){
         commentRepository.save(comment);
