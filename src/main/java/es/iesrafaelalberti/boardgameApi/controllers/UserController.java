@@ -28,6 +28,10 @@ public class UserController {
     public ResponseEntity<Object> show(@PathVariable("username") String username) {
         return new ResponseEntity<>(userRepository.findByUsername(username), HttpStatus.OK);
     }
+    @GetMapping("/users/id/{id}")
+    public ResponseEntity<Object> show(@PathVariable("id") Long id) {
+        return new ResponseEntity<>(userRepository.findById(id), HttpStatus.OK);
+    }
     @PostMapping("/users/create")
     public ResponseEntity<Object> create(@RequestBody User user){
         String encodedPassword = new BCryptPasswordEncoder().encode(user.getPassword());
