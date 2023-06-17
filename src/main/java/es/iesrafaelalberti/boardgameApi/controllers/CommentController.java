@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -16,10 +18,18 @@ public class CommentController {
     CommentRepository commentRepository;
 
     @GetMapping("/comments")
-    public ResponseEntity<Object> index() {return new ResponseEntity<>(commentRepository.findAll(), HttpStatus.OK);}
+    public ResponseEntity<Object> index() {
+        List<CommentDTO> result = new ArrayList<>();
+        for(Comment comment:commentRepository.findAll())
+            result.add(new CommentDTO(comment));
+        return new ResponseEntity<>(result, HttpStatus.OK);
+    }
 
     @GetMapping("/comments/{id}")
-    public ResponseEntity<Object> show(@PathVariable("id") Long id) {
+    public ResponseEntity<Object> show(@PathVariable("id")Long id) {
+        return new ResponseEntity<>(new CommentDTO(commentRepository.findById(id).get()), HttpStatus.OK);
+    }
+    /* public ResponseEntity<Object> show(@PathVariable("id") Long id) {
         Optional<Comment> commentOptional = commentRepository.findById(id);
 
         if (commentOptional.isPresent()) {
@@ -30,7 +40,8 @@ public class CommentController {
         }
 
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-    }
+    } */
+
     // Old way before DTO
     /*
     public ResponseEntity<Object> show(@PathVariable("id")Long id){

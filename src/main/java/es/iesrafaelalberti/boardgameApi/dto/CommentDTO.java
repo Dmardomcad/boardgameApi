@@ -1,6 +1,7 @@
 package es.iesrafaelalberti.boardgameApi.dto;
 
 
+import es.iesrafaelalberti.boardgameApi.models.Comment;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,10 +15,10 @@ public class CommentDTO implements Serializable {
     private Long boardgameId;
     private String content;
     private String username;
-    public CommentDTO(Long id, Long boardgameId, String content, String username) {
-        this.id = id;
-        this.boardgameId = boardgameId;
-        this.content = content;
-        this.username = username;
+    public CommentDTO(Comment comment) {
+        this.id = comment.getId();
+        this.boardgameId = comment.getBoardgame().getId();
+        this.content = comment.getContent();
+        this.username = comment.getUser().getUsername();
     }
 }

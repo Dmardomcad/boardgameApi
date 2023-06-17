@@ -1,5 +1,6 @@
 package es.iesrafaelalberti.boardgameApi.controllers;
 
+import es.iesrafaelalberti.boardgameApi.dto.BoardgameDTO;
 import es.iesrafaelalberti.boardgameApi.models.Boardgame;
 import es.iesrafaelalberti.boardgameApi.repository.BoardgameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ public class BoardgameController {
 
     @GetMapping("/boardgames/{id}")
     public ResponseEntity<Object> show(@PathVariable("id") Long id ){
-        return new ResponseEntity<>(boardGameRepository.findById(id),HttpStatus.OK);
+        return new ResponseEntity<>(new BoardgameDTO(boardGameRepository.findById(id).get()),HttpStatus.OK);
     }
     @PostMapping("/boardgames/create")
     public ResponseEntity<Object> create(@RequestBody Boardgame boardgame){

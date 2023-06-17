@@ -1,9 +1,12 @@
 package es.iesrafaelalberti.boardgameApi.dto;
 
+import es.iesrafaelalberti.boardgameApi.models.Boardgame;
+import es.iesrafaelalberti.boardgameApi.models.Comment;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -17,17 +20,18 @@ public class BoardgameDTO {
     private int duration;
     private String difficulty;
     private String category;
-    private List<CommentDTO> comments;
+    private List<CommentDTO> comments = new ArrayList<>();
 
-    public BoardgameDTO(Long id, String name, String description, String detailImage, int duration, String difficulty, String category,List<CommentDTO> comments){
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.detailImage = detailImage;
-        this.duration = duration;
-        this.difficulty = difficulty;
-        this.category = category;
-        this.comments = comments;
+    public BoardgameDTO(Boardgame boardgame){
+        this.id = boardgame.getId();
+        this.name = boardgame.getName();
+        this.description = boardgame.getDescription();
+        this.detailImage = boardgame.getDetailImage();
+        this.duration = boardgame.getDuration();
+        this.difficulty = boardgame.getDifficulty();
+        this.category = boardgame.getCategory();
+        for (Comment comment: boardgame.getComment())
+            comments.add(new CommentDTO(comment));
     }
 
 }
