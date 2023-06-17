@@ -26,6 +26,8 @@ public class Boardgame {
 
     private String difficulty;
 
+    private String category;
+
     @JsonBackReference(value="manuelrivas")
     @ManyToOne
     @JoinColumn()
@@ -38,12 +40,13 @@ public class Boardgame {
     public Boardgame() {
     }
 
-    public Boardgame(String name, String description,String detailImage, Integer duration, String difficulty, Publisher publisher) {
+    public Boardgame(String name, String description,String detailImage, Integer duration, String difficulty, String category, Publisher publisher) {
         this.name = name;
         this.description = description;
         this.detailImage = detailImage;
         this.duration = duration;
         this.difficulty = difficulty;
+        this.category = category;
         this.publisher = publisher;
     }
 }

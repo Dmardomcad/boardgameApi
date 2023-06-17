@@ -47,7 +47,7 @@ public class Seeder implements CommandLineRunner {
         // Manually publishers creation
         List<Publisher> publishers = new ArrayList<>();
 
-        Publisher gamesworkshop = new Publisher("Games Workshop",20, "https://i.ibb.co/BwMGGkw/Games-Workshop-logo-svg.png");
+        Publisher gamesworkshop = new Publisher("Games Workshop",20, "https://i.ibb.co/BwMGGkw/Games-Workshop-logo-svg.png", "Games Workshop es una empresa británica especializada en juegos de mesa y miniaturas. Son conocidos mundialmente por su popular juego de miniaturas Warhammer 40.000, que se desarrolla en un universo de ciencia ficción futurista. Games Workshop crea juegos de estrategia táctica que involucran la construcción, pintura y personalización de miniaturas, así como la planificación de estrategias y batallas en un mundo de fantasía y ciencia ficción.");
         publishers.add(gamesworkshop);
 
         //Publisher devir = new Publisher("Devir",5);
@@ -59,32 +59,32 @@ public class Seeder implements CommandLineRunner {
         //Publisher wyrdgames = new Publisher("Wyrd Games", 2);
         //publishers.add(wyrdgames);
 
-        Publisher mattelgames = new Publisher("Mattel Games", 10, "https://i.ibb.co/gz1VRLx/Mattel-Games.webp");
+        Publisher mattelgames = new Publisher("Mattel Games", 10, "https://i.ibb.co/gz1VRLx/Mattel-Games.webp", "Mattel Games es una reconocida empresa de juguetes y juegos de mesa con sede en Estados Unidos. Han sido líderes en la industria del entretenimiento durante décadas y son conocidos por crear juegos populares como Uno, Pictionary, Scrabble, entre otros. Mattel Games se enfoca en desarrollar juegos divertidos, accesibles y adecuados para toda la familia, y su amplio catálogo abarca una variedad de géneros y estilos de juego.");
         publishers.add(mattelgames);
 
-        Publisher asmodee = new Publisher("Asmodee", 3, "https://i.ibb.co/3rFPWK3/Asmodee-svg.png");
+        Publisher asmodee = new Publisher("Asmodee", 3, "https://i.ibb.co/3rFPWK3/Asmodee-svg.png", "Asmodee es una empresa francesa líder en la industria de juegos de mesa. Se dedican a la publicación, desarrollo y distribución de una amplia gama de juegos de mesa, tanto propios como de otras editoriales. Asmodee es conocida por ofrecer juegos innovadores y de alta calidad, abarcando diversos géneros y mecánicas de juego. Además, han adquirido numerosas editoriales de renombre, lo que les ha permitido contar con un amplio catálogo de juegos populares como Jungle Speed, Catan, Ticket to Ride, entre otros.");
         publishers.add(asmodee);
 
         publisherRepository.saveAll(publishers);
         // Manually games creation
         List<Boardgame> boardgames = new ArrayList<>();
 
-        Boardgame warhammer40k = new Boardgame("Warhammer 40.000", " Juego de miniaturas de estrategia ambientado en un futuro distópico, en donde se mezclan elementos de la ciencia ficción con elementos de la fantasía heroica.", "https://i.ibb.co/vZq3HZX/60010199031-WH40-KElite-Edition-Stock.webp", 240, "Alta", gamesworkshop);
+        Boardgame warhammer40k = new Boardgame("Warhammer 40.000", " Juego de miniaturas de estrategia ambientado en un futuro distópico, en donde se mezclan elementos de la ciencia ficción con elementos de la fantasía heroica.", "https://i.ibb.co/vZq3HZX/60010199031-WH40-KElite-Edition-Stock.webp", 240, "Alta", "Miniaturas", gamesworkshop);
         boardgames.add(warhammer40k);
 
-        Boardgame necromunda = new Boardgame("Necromunda", "Adéntrate en el mundo de los juegos de guerra de escaramuzas con Necromunda: Hive War. Elige tu banda y lucha en emocionantes y trepidantes partidas tácticas ambientadas en la oscuridad de la infracolmena.", "https://i.ibb.co/c3pqcTZ/60010599003-Hive-War-Lead.webp", 240, "Alta", gamesworkshop);
+        Boardgame necromunda = new Boardgame("Necromunda", "Adéntrate en el mundo de los juegos de guerra de escaramuzas con Necromunda: Hive War. Elige tu banda y lucha en emocionantes y trepidantes partidas tácticas ambientadas en la oscuridad de la infracolmena.", "https://i.ibb.co/c3pqcTZ/60010599003-Hive-War-Lead.webp", 240,"Alta" ,"Miniaturas", gamesworkshop);
         boardgames.add(necromunda);
 
-        Boardgame whunderworlds = new Boardgame("Warhammer Underworlds", "Juego de mesa trepidante y lleno de acción en el que bandas luchan por la gloria en los oscuros rincones de los Reinos Mortales.", "https://i.ibb.co/1QTsz3y/03010799020-SPAWHUStarter-Set1.jpg", 240, "Media", gamesworkshop);
+        Boardgame whunderworlds = new Boardgame("Warhammer Underworlds", "Juego de mesa trepidante y lleno de acción en el que bandas luchan por la gloria en los oscuros rincones de los Reinos Mortales.", "https://i.ibb.co/1QTsz3y/03010799020-SPAWHUStarter-Set1.jpg", 240, "Media","Miniaturas", gamesworkshop);
         boardgames.add(whunderworlds);
 
-        Boardgame uno = new Boardgame("Uno", "Juego de cartas donde debes deshacerte de todas tus cartas coincidiendo en color o número.", "https://i.ibb.co/9GFnVBC/Uno.jpg", 15, "Baja", mattelgames);
+        Boardgame uno = new Boardgame("Uno", "Juego de cartas donde debes deshacerte de todas tus cartas coincidiendo en color o número.", "https://i.ibb.co/9GFnVBC/Uno.jpg", 15,"Baja","Cartas", mattelgames);
         boardgames.add(uno);
 
-        Boardgame junglespeed = new Boardgame("Jungle Speed", " Juego de velocidad y reflejos donde los jugadores deben agarrar rápidamente el tótem al coincidir símbolos en las cartas.", "https://i.ibb.co/Wg74HjM/jungle.png", 15, "Baja", asmodee);
+        Boardgame junglespeed = new Boardgame("Jungle Speed", " Juego de velocidad y reflejos donde los jugadores deben agarrar rápidamente el tótem al coincidir símbolos en las cartas.", "https://i.ibb.co/Wg74HjM/jungle.png", 15, "Baja","Habilidad",asmodee);
         boardgames.add(junglespeed);
 
-        Boardgame hombreslobo = new Boardgame("Hombres Lobo", "Juego de deducción social donde los aldeanos intentan descubrir y eliminar a los hombres lobo.", "https://i.ibb.co/DbS5vFm/hombres-lobo.jpg", 15, "Baja", asmodee);
+        Boardgame hombreslobo = new Boardgame("Hombres Lobo", "Juego de deducción social donde los aldeanos intentan descubrir y eliminar a los hombres lobo.", "https://i.ibb.co/DbS5vFm/hombres-lobo.jpg", 15,"Baja","Social", asmodee);
         boardgames.add(hombreslobo);
 
         boardGameRepository.saveAll(boardgames);

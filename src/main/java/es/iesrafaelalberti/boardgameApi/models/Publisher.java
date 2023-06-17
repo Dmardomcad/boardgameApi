@@ -19,6 +19,9 @@ public class Publisher {
     private Integer yearsActive;
 
     private String imagePublisher;
+
+    @Column(length = 1500)
+    private String info;
     @JsonManagedReference(value="manuelrivas")
     @OneToMany (mappedBy = "publisher", cascade = CascadeType.ALL)
     private Set<Boardgame> boardgame = new HashSet<>();
@@ -27,9 +30,10 @@ public class Publisher {
     public Publisher() {
     }
 
-    public Publisher(String name, Integer yearsActive, String imagePublisher) {
+    public Publisher(String name, Integer yearsActive, String imagePublisher, String info) {
         this.name = name;
         this.yearsActive = yearsActive;
         this.imagePublisher = imagePublisher;
+        this.info = info;
     }
 }

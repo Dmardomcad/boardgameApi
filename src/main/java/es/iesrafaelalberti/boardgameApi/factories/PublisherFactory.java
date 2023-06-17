@@ -20,6 +20,7 @@ public class PublisherFactory {
         for(int i=0;i<number; i++)
             publishers.add(new Publisher(esFaker.name().firstName(),
                                         esFaker.number().randomDigit(),
+                                        esFaker.name().firstName(),
                                         esFaker.name().firstName()
                     ));
 
