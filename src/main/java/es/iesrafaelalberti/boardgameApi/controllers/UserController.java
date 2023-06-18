@@ -1,5 +1,6 @@
 package es.iesrafaelalberti.boardgameApi.controllers;
 
+import es.iesrafaelalberti.boardgameApi.dto.UserDTO;
 import es.iesrafaelalberti.boardgameApi.models.User;
 import es.iesrafaelalberti.boardgameApi.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,7 @@ public class UserController {
 
     @GetMapping("/users/{username}")
     public ResponseEntity<Object> show(@PathVariable("username") String username) {
-        return new ResponseEntity<>(userRepository.findByUsername(username), HttpStatus.OK);
+        return new ResponseEntity<>(new UserDTO(userRepository.findByUsername(username)), HttpStatus.OK);
     }
     @GetMapping("/users/id/{id}")
     public ResponseEntity<Object> show(@PathVariable("id") Long id) {
