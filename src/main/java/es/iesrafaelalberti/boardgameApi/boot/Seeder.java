@@ -42,7 +42,7 @@ public class Seeder implements CommandLineRunner {
     @Override
     public void run (String... args) {
         // Manual seeders
-        User testUser = new User("dmardom", "dmardom@alberti.es", "pestillo");
+        User testUser = new User("dmardom", "dmardom@alberti.es", "pestillo1");
         userRepository.save(testUser);
         // Manually publishers creation
         List<Publisher> publishers = new ArrayList<>();
