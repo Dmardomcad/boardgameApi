@@ -31,7 +31,7 @@ class BoardgameApiApplicationTests {
 	CommentRepository commentRepository;
 	@Test
 	void rootWhenUnauthenticatedThen401() throws Exception {
-		this.mvc.perform(get("/boardgames/"))
+		this.mvc.perform(get("/boardgames"))
 				.andExpect(status().isUnauthorized());
 	}
 	@Test
@@ -43,7 +43,7 @@ class BoardgameApiApplicationTests {
 	@Test
 	void listTest() throws Exception {
 		MvcResult result = this.mvc.perform(post("/token")
-				.with(httpBasic("dmardom","pestillo")))
+				.with(httpBasic("dmardom","pestillo1")))
 				.andExpect(status().isOk())
 				.andReturn();
 		String token = result.getResponse().getContentAsString();
@@ -59,7 +59,7 @@ class BoardgameApiApplicationTests {
 	@Test
 	void creationTest() throws Exception {
 		MvcResult result = this.mvc.perform(post("/token")
-						.with(httpBasic("dmardom","pestillo")))
+						.with(httpBasic("dmardom","pestillo1")))
 				.andExpect(status().isOk())
 				.andReturn();
 
@@ -83,7 +83,7 @@ class BoardgameApiApplicationTests {
 	@Test
 	void detailTest() throws Exception {
 		MvcResult result = this.mvc.perform(post("/token")
-						.with(httpBasic("dmardom","pestillo")))
+						.with(httpBasic("dmardom","pestillo1")))
 				.andExpect(status().isOk())
 				.andReturn();
 
@@ -102,7 +102,7 @@ class BoardgameApiApplicationTests {
 	@Test
 	void updateTest() throws Exception {
 		MvcResult result = this.mvc.perform(post("/token")
-						.with(httpBasic("dmardom","pestillo")))
+						.with(httpBasic("dmardom","pestillo1")))
 				.andExpect(status().isOk())
 				.andReturn();
 
@@ -128,7 +128,7 @@ class BoardgameApiApplicationTests {
 	 @Test
 	void deleteTest() throws Exception {
 		 MvcResult result = this.mvc.perform(post("/token")
-						 .with(httpBasic("dmardom","pestillo")))
+						 .with(httpBasic("dmardom","pestillo1")))
 				 .andExpect(status().isOk())
 				 .andReturn();
 
