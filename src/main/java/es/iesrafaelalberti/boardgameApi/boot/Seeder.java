@@ -42,7 +42,7 @@ public class Seeder implements CommandLineRunner {
     @Override
     public void run (String... args) {
         // Manual seeders
-        User testUser = new User("dmardom", "dmardom@alberti.es", "pestillo1");
+        User testUser = new User("dmardom", "dmardom@alberti.es", "pestillo1", "España");
         userRepository.save(testUser);
         // Manually publishers creation
         List<Publisher> publishers = new ArrayList<>();
@@ -86,6 +86,13 @@ public class Seeder implements CommandLineRunner {
 
         Boardgame hombreslobo = new Boardgame("Hombres Lobo", "Juego de deducción social donde los aldeanos intentan descubrir y eliminar a los hombres lobo.", "https://i.ibb.co/zb6Dx8Y/lobo.png", 15,"Baja","Social", asmodee);
         boardgames.add(hombreslobo);
+
+        Boardgame explodingkittens = new Boardgame("Exploding Kittens", "Juego para los más pequeños en el que sacarán los dientes a un cocodrilo mientras evitan que el juguete les muerda.", "https://i.ibb.co/BLhTFJv/Juego-De-Mesa-Exploding-Kittens.png", 15,"Baja","Social", asmodee);
+        boardgames.add(explodingkittens);
+
+        Boardgame starwarsunlimited = new Boardgame("Star Wars: Unlimited", "¡Adéntrate en una galaxia de infinitas posibilidades con Star Wars™: Unlimited! Con las sencillas reglas de este trepidante juego de cartas coleccionables, tu adversario y tú os enfrentaréis en emocionantes batallas protagonizadas por los personajes más emblemáticos del universo de Star Wars. ¡Protege a tus aliados como Luke Skywalker o lanza una devastadora ofensiva como Darth Vader!\n" +
+                "\n", "https://i.ibb.co/hDx0chh/Star-Wars-Unlimited-OP-Kit-Spread-Launch-Kit-941e337a76.png", 30,"Media","Cartas", asmodee);
+        boardgames.add(starwarsunlimited);
 
         boardGameRepository.saveAll(boardgames);
 

@@ -17,6 +17,7 @@ public class UserDTO {
     private String username;
     private String email;
     private String password;
+    private String country;
     private List<CommentDTO> comments = new ArrayList<>();
 
     public UserDTO(User user) {
@@ -24,6 +25,7 @@ public class UserDTO {
         this.username = user.getUsername();
         this.email = user.getEmail();
         this.password = user.getPassword();
+        this.country = user.getCountry();
         for(Comment comment: user.getComment())
             comments.add(new CommentDTO(comment));
     }

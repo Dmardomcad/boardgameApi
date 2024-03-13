@@ -25,14 +25,16 @@ public class User {
     private String username;
     private String email;
     private String password;
+    private String country;
+
     @JsonManagedReference(value = "valor")
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private Set<Comment> comment = new HashSet<>();
 
-    public User(String username,String email, String password) {
+    public User(String username,String email, String password, String country) {
         this.username = username;
         this.email = email;
         this.password = new BCryptPasswordEncoder().encode(password);
-
+        this.country = country;
     }
 }

@@ -17,7 +17,8 @@ public class UserFactory {
         for(int i=0;i<number; i++)
             users.add(new User(esFaker.name().username(),
                     esFaker.internet().emailAddress(),
-                    esFaker.internet().password()));
+                    esFaker.internet().password(),
+                    esFaker.country().name()));
         return users;
     }
 }
