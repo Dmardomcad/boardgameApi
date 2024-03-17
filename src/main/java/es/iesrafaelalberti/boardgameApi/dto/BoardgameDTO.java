@@ -17,6 +17,7 @@ public class BoardgameDTO {
     private String name;
     private String description;
     private String detailImage;
+    private String listImage;
     private int duration;
     private String difficulty;
     private String category;
@@ -27,6 +28,7 @@ public class BoardgameDTO {
         this.name = boardgame.getName();
         this.description = boardgame.getDescription();
         this.detailImage = boardgame.getDetailImage();
+        this.listImage = boardgame.getListImage();
         this.duration = boardgame.getDuration();
         this.difficulty = boardgame.getDifficulty();
         this.category = boardgame.getCategory();

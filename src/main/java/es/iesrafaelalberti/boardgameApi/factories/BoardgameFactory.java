@@ -23,6 +23,7 @@ public class BoardgameFactory {
             boardgames.add(new Boardgame(esFaker.name().firstName(),
                     esFaker.name().firstName(),
                     esFaker.name().firstName(),
+                    esFaker.name().firstName(),
                     esFaker.number().numberBetween(10,160),
                     esFaker.name().firstName(),
                     esFaker.name().firstName(),

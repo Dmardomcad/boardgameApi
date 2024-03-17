@@ -69,29 +69,29 @@ public class Seeder implements CommandLineRunner {
         // Manually games creation
         List<Boardgame> boardgames = new ArrayList<>();
 
-        Boardgame warhammer40k = new Boardgame("Warhammer 40.000", " Juego de miniaturas de estrategia ambientado en un futuro distópico, en donde se mezclan elementos de la ciencia ficción con elementos de la fantasía heroica.", "https://i.ibb.co/d7DKKCH/w1.png", 240, "Alta", "Miniaturas", gamesworkshop);
+        Boardgame warhammer40k = new Boardgame("Warhammer 40.000", " Juego de miniaturas de estrategia ambientado en un futuro distópico, en donde se mezclan elementos de la ciencia ficción con elementos de la fantasía heroica.", "https://i.ibb.co/d7DKKCH/w1.png", "https://i.ibb.co/CQyYzj3/warhammer-40000-open-war.jpg", 240, "Alta", "Miniaturas", gamesworkshop);
         boardgames.add(warhammer40k);
 
-        Boardgame necromunda = new Boardgame("Necromunda", "Adéntrate en el mundo de los juegos de guerra de escaramuzas con Necromunda: Hive War. Elige tu banda y lucha en emocionantes y trepidantes partidas tácticas ambientadas en la oscuridad de la infracolmena.", "https://i.ibb.co/T88QVd9/w2.png", 240,"Alta" ,"Miniaturas", gamesworkshop);
+        Boardgame necromunda = new Boardgame("Necromunda", "Adéntrate en el mundo de los juegos de guerra de escaramuzas con Necromunda: Hive War. Elige tu banda y lucha en emocionantes y trepidantes partidas tácticas ambientadas en la oscuridad de la infracolmena.", "https://i.ibb.co/T88QVd9/w2.png", "https://i.ibb.co/MGP1qS5/necromunda-underhive-badzone-delta-7.jpg", 240,"Alta" ,"Miniaturas", gamesworkshop);
         boardgames.add(necromunda);
 
-        Boardgame whunderworlds = new Boardgame("Warhammer Underworlds", "Juego de mesa trepidante y lleno de acción en el que bandas luchan por la gloria en los oscuros rincones de los Reinos Mortales.", "https://i.ibb.co/QMz3cCj/u-Jo-J8-Slq-SSY0nnc-I.png", 240, "Media","Miniaturas", gamesworkshop);
+        Boardgame whunderworlds = new Boardgame("Warhammer Underworlds", "Juego de mesa trepidante y lleno de acción en el que bandas luchan por la gloria en los oscuros rincones de los Reinos Mortales.", "https://i.ibb.co/QMz3cCj/u-Jo-J8-Slq-SSY0nnc-I.png", "https://i.ibb.co/FYyVrzN/warhammer-undergrounds-beastgrave.jpg", 240, "Media","Miniaturas", gamesworkshop);
         boardgames.add(whunderworlds);
 
-        Boardgame uno = new Boardgame("Uno", "Juego de cartas donde debes deshacerte de todas tus cartas coincidiendo en color o número.", "https://i.ibb.co/jzLJgG8/uno1.png", 15,"Baja","Cartas", mattelgames);
+        Boardgame uno = new Boardgame("Uno", "Juego de cartas donde debes deshacerte de todas tus cartas coincidiendo en color o número.", "https://i.ibb.co/jzLJgG8/uno1.png", "https://i.ibb.co/d7DKKCH/w1.png", 15,"Baja","Cartas", mattelgames);
         boardgames.add(uno);
 
-        Boardgame junglespeed = new Boardgame("Jungle Speed", " Juego de velocidad y reflejos donde los jugadores deben agarrar rápidamente el tótem al coincidir símbolos en las cartas.", "https://i.ibb.co/f1LmLXN/taboo.png", 15, "Baja","Habilidad",asmodee);
+        Boardgame junglespeed = new Boardgame("Jungle Speed", " Juego de velocidad y reflejos donde los jugadores deben agarrar rápidamente el tótem al coincidir símbolos en las cartas.", "https://i.ibb.co/f1LmLXN/taboo.png", "https://i.ibb.co/SPDTMHy/jungle-speed-bertone.jpg", 15, "Baja","Habilidad",asmodee);
         boardgames.add(junglespeed);
 
-        Boardgame hombreslobo = new Boardgame("Hombres Lobo", "Juego de deducción social donde los aldeanos intentan descubrir y eliminar a los hombres lobo.", "https://i.ibb.co/zb6Dx8Y/lobo.png", 15,"Baja","Social", asmodee);
+        Boardgame hombreslobo = new Boardgame("Hombres Lobo", "Juego de deducción social donde los aldeanos intentan descubrir y eliminar a los hombres lobo.", "https://i.ibb.co/zb6Dx8Y/lobo.png", "https://i.ibb.co/d7DKKCH/w1.png", 15,"Baja","Social", asmodee);
         boardgames.add(hombreslobo);
 
-        Boardgame explodingkittens = new Boardgame("Exploding Kittens", "Juego para los más pequeños en el que sacarán los dientes a un cocodrilo mientras evitan que el juguete les muerda.", "https://i.ibb.co/BLhTFJv/Juego-De-Mesa-Exploding-Kittens.png", 15,"Baja","Social", asmodee);
+        Boardgame explodingkittens = new Boardgame("Exploding Kittens", "Juego para los más pequeños en el que sacarán los dientes a un cocodrilo mientras evitan que el juguete les muerda.", "https://i.ibb.co/BLhTFJv/Juego-De-Mesa-Exploding-Kittens.png", "https://i.ibb.co/WKyGyyZ/exploding-kittens.png", 15,"Baja","Social", asmodee);
         boardgames.add(explodingkittens);
 
         Boardgame starwarsunlimited = new Boardgame("Star Wars: Unlimited", "¡Adéntrate en una galaxia de infinitas posibilidades con Star Wars™: Unlimited! Con las sencillas reglas de este trepidante juego de cartas coleccionables, tu adversario y tú os enfrentaréis en emocionantes batallas protagonizadas por los personajes más emblemáticos del universo de Star Wars. ¡Protege a tus aliados como Luke Skywalker o lanza una devastadora ofensiva como Darth Vader!\n" +
-                "\n", "https://i.ibb.co/hDx0chh/Star-Wars-Unlimited-OP-Kit-Spread-Launch-Kit-941e337a76.png", 30,"Media","Cartas", asmodee);
+                "\n", "https://i.ibb.co/hDx0chh/Star-Wars-Unlimited-OP-Kit-Spread-Launch-Kit-941e337a76.png", "https://i.ibb.co/BrxWZ9s/swu-la-chispa-de-la-rebelion-caja-inicio.png", 30,"Media","Cartas", asmodee);
         boardgames.add(starwarsunlimited);
 
         boardGameRepository.saveAll(boardgames);

@@ -21,6 +21,7 @@ public class Boardgame {
     private String description;
 
     private String detailImage;
+    private String listImage;
 
     private Integer duration;
 
@@ -40,10 +41,11 @@ public class Boardgame {
     public Boardgame() {
     }
 
-    public Boardgame(String name, String description,String detailImage, Integer duration, String difficulty, String category, Publisher publisher) {
+    public Boardgame(String name, String description,String detailImage,String listImage, Integer duration, String difficulty, String category, Publisher publisher) {
         this.name = name;
         this.description = description;
         this.detailImage = detailImage;
+        this.listImage = listImage;
         this.duration = duration;
         this.difficulty = difficulty;
         this.category = category;
