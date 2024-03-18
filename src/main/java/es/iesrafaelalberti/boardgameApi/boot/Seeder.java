@@ -38,7 +38,6 @@ public class Seeder implements CommandLineRunner {
     @Autowired
     UserFactory userFactory;
 
-    // Falta introducir los datos para los comments
     @Override
     public void run (String... args) {
         // Manual seeders
@@ -50,14 +49,6 @@ public class Seeder implements CommandLineRunner {
         Publisher gamesworkshop = new Publisher("Games Workshop",2004, "https://i.ibb.co/BwMGGkw/Games-Workshop-logo-svg.png", "Games Workshop es una empresa británica especializada en juegos de mesa y miniaturas. Son conocidos mundialmente por su popular juego de miniaturas Warhammer 40.000, que se desarrolla en un universo de ciencia ficción futurista. Games Workshop crea juegos de estrategia táctica que involucran la construcción, pintura y personalización de miniaturas, así como la planificación de estrategias y batallas en un mundo de fantasía y ciencia ficción.");
         publishers.add(gamesworkshop);
 
-        //Publisher devir = new Publisher("Devir",5);
-        //publishers.add(devir);
-
-        //Publisher corvusbelli = new Publisher("Corvus Belli", 10);
-        //publishers.add(corvusbelli);
-
-        //Publisher wyrdgames = new Publisher("Wyrd Games", 2);
-        //publishers.add(wyrdgames);
 
         Publisher devir = new Publisher("Devir", 2014, "https://i.ibb.co/6HpsF6N/logo-devir-caja-azul.png", "Devir es un grupo editorial brasileño fundado en 1987 y especializado en productos de ocio y entretenimiento: literatura fantástica, cómics y juegos de toda clase como juegos de rol, de tablero, de cartas coleccionables, de naipes, de miniaturas etc. El grupo tiene filiales en ocho países diferentes: Brasil, Portugal, España, Estados Unidos, Chile, Colombia, México y Argentina\n" +
                 "\n");
@@ -88,10 +79,10 @@ public class Seeder implements CommandLineRunner {
         Boardgame junglespeed = new Boardgame("Jungle Speed", " Juego de velocidad y reflejos donde los jugadores deben agarrar rápidamente el tótem al coincidir símbolos en las cartas.", "https://i.ibb.co/f1LmLXN/taboo.png", "https://i.ibb.co/SPDTMHy/jungle-speed-bertone.jpg", 15, "Baja","Habilidad",asmodee);
         boardgames.add(junglespeed);
 
-        Boardgame hombreslobo = new Boardgame("Hombres Lobo", "Juego de deducción social donde los aldeanos intentan descubrir y eliminar a los hombres lobo.", "https://i.ibb.co/zb6Dx8Y/lobo.png", "https://i.ibb.co/d7DKKCH/w1.png", 15,"Baja","Social", asmodee);
+        Boardgame hombreslobo = new Boardgame("Hombres Lobo", "divertido juego de suspense. Un moderador supervisa el enfrentamiento entre los hambrientos hombres lobo y los aldeanos que tratan de eliminarlos. Aprende a mentir y a farolear porque en Los Hombres Lobo de Castronegro esas habilidades te harán mucha falta para seguir vivo.", "https://i.ibb.co/zb6Dx8Y/lobo.png", "https://i.ibb.co/gStpGwL/best-of-hombres-lobo-de-castronegro.jpg", 15,"Baja","Social", asmodee);
         boardgames.add(hombreslobo);
 
-        Boardgame explodingkittens = new Boardgame("Exploding Kittens", "Juego para los más pequeños en el que sacarán los dientes a un cocodrilo mientras evitan que el juguete les muerda.", "https://i.ibb.co/BLhTFJv/Juego-De-Mesa-Exploding-Kittens.png", "https://i.ibb.co/WKyGyyZ/exploding-kittens.png", 15,"Baja","Social", asmodee);
+        Boardgame explodingkittens = new Boardgame("Exploding Kittens", "Exploding Kittens es un juego rápido y divertido en el que tienes que asegurar tu supervivencia ante los temibles ¡gatos explosivos! Un juego de cartas en el que hasta cinco jugadores hacen todo lo posible por fastidiar a los rivales hasta conseguir que caigan eliminados.", "https://i.ibb.co/BLhTFJv/Juego-De-Mesa-Exploding-Kittens.png", "https://i.ibb.co/WKyGyyZ/exploding-kittens.png", 15,"Baja","Social", asmodee);
         boardgames.add(explodingkittens);
 
         Boardgame starwarsunlimited = new Boardgame("Star Wars: Unlimited", "¡Adéntrate en una galaxia de infinitas posibilidades con Star Wars™: Unlimited! Con las sencillas reglas de este trepidante juego de cartas coleccionables, tu adversario y tú os enfrentaréis en emocionantes batallas protagonizadas por los personajes más emblemáticos del universo de Star Wars. ¡Protege a tus aliados como Luke Skywalker o lanza una devastadora ofensiva como Darth Vader!\n" +

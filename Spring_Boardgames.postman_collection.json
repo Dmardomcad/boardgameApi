@@ -1,0 +1,601 @@
+{
+	"info": {
+		"_postman_id": "644e60ae-0d6e-4080-ab23-8eebed0f6934",
+		"name": "Spring_Boardgames",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25246970"
+	},
+	"item": [
+		{
+			"name": "Token",
+			"item": [
+				{
+					"name": "Token",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "pestillo",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "dmardom",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Boardgames",
+			"item": [
+				{
+					"name": "Get all boardgames",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiZG1hcmRvbSIsImV4cCI6MTY3ODQ4NjgxMSwiaWF0IjoxNjc4NDgzMjExLCJzY29wZSI6IiJ9.QngiXPNxMIOPksYiuF9nSg2weZ4j51CYkL_9m-19_0Tl9jsTKMOc_wyeuhNuFfQTgl-q5Ui-WZw5qzKrB3nwCT0Fs-6uIEWj3YEDv58S1Dg9ynfU-VrC5bdoOTW_8DLQ7A69sqJ6RQS43Z9AxU-KVmDqY8WX5CdfVsYB9S4pPAHySAGDIKIqU02DYYgMcG5WdX1vvHyC3T9GQC3e21YS7rnnyUKvboL9--UKmi3py-0Fr-9bsxllE9ge8CGrN2QJhiJJoLCvHxusCmgyt2bYHcFPHbf6NeOwNZJpd4kPrCDotCE1N1apSKg72VlxGev1dN226GixuTyJ3A8EjlnTTg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/boardgames",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"boardgames"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one boardgame",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/boardgames/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"boardgames",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post boardgame",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiZG1hcmRvbSIsImV4cCI6MTY3ODQ1MzgyNSwiaWF0IjoxNjc4NDUwMjI1LCJzY29wZSI6IiJ9.IOSGs776X8-QLPU4yCF4oA6fcBFhN3K9tOD8Vn6OnkHWyQAAuE2kzvkxcNMkc5Nc35lmDueP2fTa8Erv8AwswlT3o_MKaSZz-Fsv-aM5mKp-FKAzV2DFtaCyMMyLj5CeRkcQXNMM5W3RsfdQ431wer_euy18gNpzS6ee7t3o_uDqTM5csO2PJLf69GvKSn0sOIntN0G9QOCrs2iSJ847bjKBL4zdxpUJj7qX3veNJQWt_WBl3GJE1dyFOEpzm4IMdOiZIlmFNrU6Eix8t5ySV3H6QU1a5tNGy5XHlJ7IgqxJ0Q-k54TZRaAjmq2Hr6eGsSWSv3An3aTUA3-K2i8qaw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\": \"Bang!\", \"description\": \"Juego rápido y sencillo para toda la familia\", \"duration\": 25, \"difficulty\": \"Easy\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/boardgames/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"boardgames",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete one boardgame",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiZG1hcmRvbSIsImV4cCI6MTY3ODQ4ODA4MSwiaWF0IjoxNjc4NDg0NDgxLCJzY29wZSI6IiJ9.lohDcjBERLyIDkurGWbIvfj74FJ64CuW90yQZenG6HWUHd0WiJaF3X05U-UgsDDkefi9IpOAbRp9DKOgEkLV_U_fPqGvADy5UAHloZKKDdyerJYlExuKZguo2-dLkBYZocYKTGCjB0F8tFFTD9vL7eDBK_gWt-FFadEzl-rA-BGeDcoKqwd7e2tIIG8Wu9vv42xfLJaogpBfFQTuw-F9pIvTF6GeT60-At8KubGTGB4TcuUIWRgqae9oogx_1iIVc1zSbEIRu9sfIIyNYbN0sFvWIOgkrxwH2zNIKMVLnWn8l6AV3p1KiYT1B6y46F6LJQmioHLSrdGXPOn5aH09Pw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/boardgames/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"boardgames",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update one boardgame",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiZG1hcmRvbSIsImV4cCI6MTY3ODQ4ODA4MSwiaWF0IjoxNjc4NDg0NDgxLCJzY29wZSI6IiJ9.lohDcjBERLyIDkurGWbIvfj74FJ64CuW90yQZenG6HWUHd0WiJaF3X05U-UgsDDkefi9IpOAbRp9DKOgEkLV_U_fPqGvADy5UAHloZKKDdyerJYlExuKZguo2-dLkBYZocYKTGCjB0F8tFFTD9vL7eDBK_gWt-FFadEzl-rA-BGeDcoKqwd7e2tIIG8Wu9vv42xfLJaogpBfFQTuw-F9pIvTF6GeT60-At8KubGTGB4TcuUIWRgqae9oogx_1iIVc1zSbEIRu9sfIIyNYbN0sFvWIOgkrxwH2zNIKMVLnWn8l6AV3p1KiYT1B6y46F6LJQmioHLSrdGXPOn5aH09Pw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\": \"Bang!\", \"description\": \"Juego rápido y sencillo para toda la familia\", \"duration\": 25, \"difficulty\": \"Hard\" }"
+						},
+						"url": {
+							"raw": "http://localhost:8080/boardgames/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"boardgames",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "Create one commet",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"content\": \"Me encanta\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/comments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all comments",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiZG1hcmRvbSIsImV4cCI6MTY3ODQ4MDY1NiwiaWF0IjoxNjc4NDc3MDU2LCJzY29wZSI6IiJ9.SO30AeeukP2mUwNZGsVWbD0Wbc6vQ7_GvUDFzfNHuIBQd8H_MrgjwPpPBYbKsQDbmmzBGRvRxn2705m2Oiwd0V_DRnd3mNNrCLsR1BbZXzmWK8gf2ym6mJmmZDnTm-2udiPiGgjc4T5gqLvd2owIILDUj4yWEk7I1Wnrue976ImFq4JHyH_rOmrKcU9-xOWR9u99UqV_t3kg4MsLgXRVoZsQ0kfsPlhueeFZql1N6jmNr2nt5RGbF_zhFQw-pYViijqI_bvm3M22TvR5cL_0scTA327UnOmE7Y18TJzLr4J70Ypam6yKKck35ostmnLON5WiRDxcejO_yEv-eL-doA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/comments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiZG1hcmRvbSIsImV4cCI6MTY3ODQ4MDY1NiwiaWF0IjoxNjc4NDc3MDU2LCJzY29wZSI6IiJ9.SO30AeeukP2mUwNZGsVWbD0Wbc6vQ7_GvUDFzfNHuIBQd8H_MrgjwPpPBYbKsQDbmmzBGRvRxn2705m2Oiwd0V_DRnd3mNNrCLsR1BbZXzmWK8gf2ym6mJmmZDnTm-2udiPiGgjc4T5gqLvd2owIILDUj4yWEk7I1Wnrue976ImFq4JHyH_rOmrKcU9-xOWR9u99UqV_t3kg4MsLgXRVoZsQ0kfsPlhueeFZql1N6jmNr2nt5RGbF_zhFQw-pYViijqI_bvm3M22TvR5cL_0scTA327UnOmE7Y18TJzLr4J70Ypam6yKKck35ostmnLON5WiRDxcejO_yEv-eL-doA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/comments/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete one comment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/comments/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update one comment",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/comments/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"comments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create one user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiZG1hcmRvbSIsImV4cCI6MTY3ODQ4NjgxMSwiaWF0IjoxNjc4NDgzMjExLCJzY29wZSI6IiJ9.QngiXPNxMIOPksYiuF9nSg2weZ4j51CYkL_9m-19_0Tl9jsTKMOc_wyeuhNuFfQTgl-q5Ui-WZw5qzKrB3nwCT0Fs-6uIEWj3YEDv58S1Dg9ynfU-VrC5bdoOTW_8DLQ7A69sqJ6RQS43Z9AxU-KVmDqY8WX5CdfVsYB9S4pPAHySAGDIKIqU02DYYgMcG5WdX1vvHyC3T9GQC3e21YS7rnnyUKvboL9--UKmi3py-0Fr-9bsxllE9ge8CGrN2QJhiJJoLCvHxusCmgyt2bYHcFPHbf6NeOwNZJpd4kPrCDotCE1N1apSKg72VlxGev1dN226GixuTyJ3A8EjlnTTg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete one user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update one user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Publishers",
+			"item": [
+				{
+					"name": "Create one publisher",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiZG1hcmRvbSIsImV4cCI6MTY3ODQ4ODU0MSwiaWF0IjoxNjc4NDg0OTQxLCJzY29wZSI6IiJ9.MMxobiaIH3jmyzWxvMy-updofs8iky3gTerAgnntWATXJpC3Du6zZj8_2e6nA75rt5F6fjZIBjuTgaBvpWe-yDqT42Y3xDNhzjMP5_30ql8SIifnLGRIup1vXZScp8BmsvQYhLCXyeggwiMiHxrUOtTgXLgNVm3zZQukR6owJbRHGZUm0ETC6pv_IJKRrSibInubu7bbI3NH8MfwEExlifhD2vOsCwT5iAqw1PFxcKH8UeBF1wjUSVEGNW-6BEauPhPzX-VeDQcQGUrReLfkqrykgVsKC9IcZ54xX61Fc5lUI_OXl5BTM0pEZd7DgZyOb-DnPEF02KyMS0KpnGUtow",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"GamesWork\", \"yearsActive\":\"23\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/publishers/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"publishers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all publishers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiZG1hcmRvbSIsImV4cCI6MTY3ODQ4NDQxNiwiaWF0IjoxNjc4NDgwODE2LCJzY29wZSI6IiJ9.AC917uuQG9vQ9pN8xA0sSpDT7j_RyYx1nJq_1DMLZBIoKj1gSAq5jEINFQEF7kwLpODw8wU0242GUBkRTSJr3Ju5jftdWsvrrECdHbgr79m55u66VepFH8RiDXA6uR8pDMAPZrftLOSVpPigGe07ebMTq1unaq_A092SjqQG873Xih_W61uyHn7o2NGUdgV4mPVrEXPKwAYBLNnPpCOZ9N_Rozdb31A24d5Efqoyru8zHWk5oZmgOZZnmkI6uFZMZ-EznT5uWFwmA78N2QdQTgz5tR_RRPi409_wGhlBRhpZnX7cXkvGvutGmtXRm7-gGZhCVgq25TIdOmL9MMujSQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/publishers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"publishers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one publisher",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/publishers/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"publishers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete one publisher",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/publishers/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"publishers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update one publisher",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/publishers/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"publishers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -36,8 +36,8 @@ class BoardgameApiApplicationTests {
 	} */
 	@Test
 	void contextLoads() {
-		assert boardgameRepository.count() == 8;
-		assert publisherRepository.count() == 3;
+		assert boardgameRepository.count() == 12;
+		assert publisherRepository.count() == 4;
 		assert commentRepository.count() == 10;
 	}
 	@Test
